@@ -1,0 +1,28 @@
+{
+  "name": "nirman-cli-js",
+  "version": "0.0.1",
+  "description": "Reconstruct directory structures from Markdown tree files (JS port of Nirman CLI).",
+  "main": "src/index.js",
+  "bin": {
+    "nirman-cli": "bin/index.js"
+  },
+  "scripts": {
+    "test": "jest --runInBand",
+    "lint": "node --check . || true"
+  },
+  "keywords": [
+    "cli",
+    "nirman",
+    "directory",
+    "markdown"
+  ],
+  "author": "Hemanth Reddy Annem",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^5.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
