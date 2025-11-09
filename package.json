@@ -1,6 +1,6 @@
 {
   "name": "nirman-cli-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Reconstruct directory structures from Markdown tree files (JS port of Nirman CLI).",
   "main": "src/index.js",
   "bin": {
