@@ -26,36 +26,30 @@ jobs:
         run: npm test
 
   publish:
-    name: Publish to npm (Trusted)
+    name: Publish to npm (classic token)
     needs: test
     runs-on: ubuntu-latest
-    # Only publish on pushes to main (not PRs)
     if: github.ref == 'refs/heads/main'
-    permissions:
-      id-token: write
-      contents: read
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node for npm publish
+      - uses: actions/checkout@v4
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org/'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Check version and publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           CURRENT_VERSION=$(node -p "require('./package.json').version")
           PUBLISHED_VERSION=$(npm view nirman-cli-js version || echo '0.0.0')
           echo "Current version: $CURRENT_VERSION"
           echo "Published version: $PUBLISHED_VERSION"
           if [ "$CURRENT_VERSION" != "$PUBLISHED_VERSION" ]; then
-            echo "Publishing new version to npm..."
-            npm publish --provenance --access public
+            echo "Publishing new version..."
+            npm publish --access public
           else
             echo "Version unchanged. Skipping publish."
           fi
