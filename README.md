@@ -3,6 +3,11 @@
 A clean, fast CLI tool to generate project folder structures from **Markdown** or **YAML** definitions.
 Stop clicking around in file explorers — describe your structure once, build it instantly.
 
+<<<<<<< HEAD
+=======
+> **Note**: This is the Node.js port of the original [Nirman-cli](https://github.com/Hemanth0411/Nirman-cli) (Python).
+
+>>>>>>> 611929898e31f15ca99e3f644d05719b4132e9c1
 ---
 
 ## **✨ Features**
@@ -67,11 +72,19 @@ project:
       - index.js
       - utils.js
 
+<<<<<<< HEAD
   services:
     api:
       files:
         - handler.js
         - routes.js
+=======
+  components:
+    Button:
+      files:
+        - index.js
+        - styles.css
+>>>>>>> 611929898e31f15ca99e3f644d05719b4132e9c1
 
   files:
     - README.md
@@ -93,10 +106,17 @@ project/
 ├── src/
 │   ├── index.js
 │   └── utils.js
+<<<<<<< HEAD
 ├── services/
 │   └── api/
 │       ├── handler.js
 │       └── routes.js
+=======
+├── components/
+│   └── Button/
+│       ├── index.js
+│       └── styles.css
+>>>>>>> 611929898e31f15ca99e3f644d05719b4132e9c1
 ├── README.md
 └── .gitignore
 ```
@@ -106,7 +126,11 @@ project/
 ## **🛠 CLI Reference**
 
 ```
+<<<<<<< HEAD
 nirman <input_file> [options]
+=======
+nirman [-h] [-o OUTPUT] [--dry-run] [-f] input_file
+>>>>>>> 611929898e31f15ca99e3f644d05719b4132e9c1
 ```
 
 ### **Arguments**
@@ -143,6 +167,10 @@ You must follow these rules when writing YAML structures:
 3. Nested folders must be dictionaries
 
 4. Lists can contain:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 611929898e31f15ca99e3f644d05719b4132e9c1
    * filenames (strings)
    * folders (dictionary items)
 
@@ -158,6 +186,28 @@ npm test
 
 ---
 
+<<<<<<< HEAD
 ## **📄 License**
 
 This project is licensed under the MIT License.
+=======
+## **🔧 Local Development Setup**
+
+```bash
+git clone https://github.com/Hemanth0411/Nirman-cli-js
+cd Nirman-cli-js
+npm install
+```
+
+Run CLI from source:
+
+```bash
+node bin/index.js example.yml
+```
+
+---
+
+## **📄 License**
+
+This project is licensed under the [MIT](https://github.com/Hemanth0411/Nirman-cli-js/blob/main/LICENSE) License.
+>>>>>>> 611929898e31f15ca99e3f644d05719b4132e9c1
