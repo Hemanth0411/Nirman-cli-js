@@ -60,7 +60,7 @@ Creates the project inside the **current directory**.
 YAML uses a clean folder → files pattern.
 **Files MUST be under a `files:` key.**
 
-**structure.yml**
+**structure.yaml**
 
 ```yaml
 project:
@@ -83,7 +83,7 @@ project:
 Generate:
 
 ```bash
-nirman structure.yml
+nirman structure.yaml
 ```
 
 ---
